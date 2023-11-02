@@ -1,1 +1,1 @@
-// console.log("Hello, I'm the App!");
+console.log("Hello, I'm the App!");
