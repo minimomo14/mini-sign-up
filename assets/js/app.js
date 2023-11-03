@@ -15,6 +15,7 @@ function validateForm() {
   const confirm_password = document.getElementById("confirmPassword").value;
   const error = document.querySelector("#error").value;
 
+  console.log("you see me here?");
   //first check empty first name
   if (firstName == "") {
     document.getElementById("blankMsg").innerHTML =
@@ -22,14 +23,14 @@ function validateForm() {
 
     return false;
   }
-
+  console.log("first name");
   //character data validation
   if (!isNaN(firstName)) {
     document.getElementById("blankMsg").innerHTML =
       "Please enter your first name here!";
     return false;
   }
-  console.log(firstName)
+  
 
   if (lastName == "") {
     document.getElementById("charMsg").innerHTML =
@@ -42,19 +43,18 @@ function validateForm() {
       "Please enter your last name here!";
     return false;
   }
-  console.log(lastName)
-  
+  console.log("here is last name")
+
   //check empty password field
   if (password == "") {
-    document.getElementById("password").innerHTML =
-      "Please enter the password";
+    alert("Please enter your password")
+    // document.getElementById("password").innerHTML = "Please enter the password";
     return false;
   }
 
   //then check the confirm password field
   if (confirm_password == "") {
-    document.getElementById("confirmPassword").innerHTML =
-      "Please confirm your password";
+    alert("Please confirm your password")
     return false;
   }
 
@@ -64,5 +64,7 @@ function validateForm() {
       "Password must be at least 8 characters";
       return false;
   }
-  console.time("I was executed")
+
 }
+
+console.log("I was executed");
