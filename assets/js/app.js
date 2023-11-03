@@ -1,34 +1,68 @@
-const submitButton = document.getElementById("#button");
-const form = document.querySelector("form")
-const password = document.getElementById("#password");
-const confirm_password = document.getElementById("#confirmPassword");
-const error = document.querySelector("#error")
+// function matchPassword() {
+//     if (password != confirm_password) {
+//         alert("Passwords did not match!");
+//     } else {
+//         alert("Password created successfully")
+//     }
+// }
 
+function validateForm() {
+  const submitButton = document.getElementById("#button");
+  const form = document.querySelector("form");
+  const firstName = document.getElementById("firstName").value;
+  const lastName = document.getElementById("lastName").value;
+  const password = document.getElementById("password").value;
+  const confirm_password = document.getElementById("confirmPassword").value;
+  const error = document.querySelector("#error").value;
 
-password.addEventListener("input", (e) => {
-    if (password != confirm_password) {
-        error.textContent = "";
-        error.className = "ERROR: Password did not match" // Password did not match!
-    } else {
-        showError();
-    }
-});
+  //first check empty first name
+  if (firstName == "") {
+    document.getElementById("blankMsg").innerHTML =
+      "First name can not be empty.";
 
-form.addEventListener("submit", (e) => {
-    if(password.validity.valid) {
-        showError();
-        e.preventDefault();
-    }
-});
+    return false;
+  }
 
-function showError() {
-    if (password.validity.valueMissing) {
-        //if it's empty, display "You need to enter password."
-        error.textContent = "You need to enter password.";
-    } else if (password.validity.typeMismatch){
-        //check if password did not match, show error: "Password did not match"
-        error.textContent = "Please enter matching password."
-    }
+  //character data validation
+  if (!isNaN(firstName)) {
+    document.getElementById("blankMsg").innerHTML =
+      "Please enter your first name here!";
+    return false;
+  }
+  console.log(firstName)
 
-    error.className = "error active";
+  if (lastName == "") {
+    document.getElementById("charMsg").innerHTML =
+      "Last name can not be empty.";
+    return false;
+  }
+
+  if (!isNaN(lastName)) {
+    document.getElementById("charMsg").innerHTML =
+      "Please enter your last name here!";
+    return false;
+  }
+  console.log(lastName)
+  
+  //check empty password field
+  if (password == "") {
+    document.getElementById("password").innerHTML =
+      "Please enter the password";
+    return false;
+  }
+
+  //then check the confirm password field
+  if (confirm_password == "") {
+    document.getElementById("confirmPassword").innerHTML =
+      "Please confirm your password";
+    return false;
+  }
+
+  //set minimum password length validation
+  if (password.length < 8) {
+    document.getElementById("#error").innerHTML =
+      "Password must be at least 8 characters";
+      return false;
+  }
+  console.time("I was executed")
 }

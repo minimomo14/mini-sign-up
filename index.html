@@ -24,7 +24,7 @@
         </a>
       </div>
       <!-- form container on the right -->
-      <form name="form" action="" method="post" onsubmit="return validationForm()">
+      <form name="form" action="" method="post" onsubmit="return validateForm()">
         <div class="form-container">
           <h1 class="form-header">
             Let's get started
@@ -37,9 +37,12 @@
               placeholder="First Name"
               class="form-control"
               id="firstName"
+              value = ""
               required
             />
-            <!-- <div class="error" id="error"></div> -->
+            <span id ="blankMsg" style="color:red"></span>
+           
+          <!-- <div class="error" id="error"></div> -->
           </div>
 
           <div class="input-container">
@@ -50,8 +53,10 @@
               placeholder="Last Name"
               class="form-control"
               id="lastName"
+              value = ""
               required
             />
+            <span id = "charMsg" style="color:red"> </span>
             <!-- <div class="error" id="error"></div> -->
           </div>
           <div class="input-container">
@@ -63,6 +68,7 @@
               class="form-control"
               id="email"
               autocomplete="off"
+              value = ""
               required
             />
           </div>
@@ -76,6 +82,7 @@
               id="phone"
               minlength="9" maxlength="9"
               autocomplete="off"
+              value = ""
               required
             />
           </div>
@@ -88,8 +95,10 @@
               class="form-control password"
               id="password"
               class="password"
+              value = ""
               required
             />
+            <span id = "message1" style="color:red"> </span>
             <div class="error" id="error"></div>
           </div>
           <div class="input-container">
@@ -101,13 +110,16 @@
               class="form-control"
               id="confirmPassword"
               class="confirmPassword"
+              value = ""
               required
             />
+            <span id = "message2" style="color:red"> </span>
             <div class="error" id="error"></div>
           </div>
 
           <div id="submit-btn" class="btn-container">
-            <button type="submit" value="submit" class="submit-btn btn btn-outline-dark" id="button">Sign up</button>
+            <button type="submit" value="submit" class="submit-btn btn btn-outline-dark" id="button" 
+           >Sign up</button>
             <p class="btn-text">
               Already have an account?
               <span class="btn-text-hightlighted btn-link">

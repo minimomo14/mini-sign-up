@@ -48,6 +48,7 @@ input {
     margin-bottom: 1rem;
 }
 
+/*
 input[type="password"] {
     appearance: none;
     width: 100%;
@@ -67,6 +68,7 @@ input:focus:invalid {
     padding: 1rem;
     margin: 0 auto;
 }
+*/
 
 .btn-link {
     color: black;
@@ -76,19 +78,3 @@ input:focus:invalid {
     color: #DBCEC5;
 } 
 
-/* For an error-msg */
-.error {
-    width: 100%;
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-  
-    box-sizing: border-box;
-  }
-  
-  .error.active {
-    padding: 0.3em;
-  }
