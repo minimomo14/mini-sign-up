@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- <link
+      <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"/>    -->
+      crossorigin="anonymous"/>   
       <link rel="stylesheet" href="./assets/css/styles.css"/>
     <title>mini-sign-up-form</title>
   </head>
@@ -24,7 +24,7 @@
         </a>
       </div>
       <!-- form container on the right -->
-      <form action="" method="">
+      <form name="form" action="" method="post" onsubmit="return validationForm()">
         <div class="form-container">
           <h1 class="form-header">
             Let's get started
@@ -39,7 +39,7 @@
               id="firstName"
               required
             />
-            <!-- <div class="error-msg" id="error"></div> -->
+            <!-- <div class="error" id="error"></div> -->
           </div>
 
           <div class="input-container">
@@ -52,7 +52,7 @@
               id="lastName"
               required
             />
-            <!-- <div class="error-msg" id="error"></div> -->
+            <!-- <div class="error" id="error"></div> -->
           </div>
           <div class="input-container">
             <label for="email"></label>
@@ -80,7 +80,7 @@
             />
           </div>
           <div class="input-container">
-            <label for="password"></label>
+            <label for="password" ></label>
             <input
               type="password"
               name="password"
@@ -90,7 +90,7 @@
               class="password"
               required
             />
-            <div class="error-msg" id="error"></div>
+            <div class="error" id="error"></div>
           </div>
           <div class="input-container">
             <label for="confirm-password"></label>
@@ -103,13 +103,11 @@
               class="confirmPassword"
               required
             />
-            <div class="error-msg" id="error"></div>
+            <div class="error" id="error"></div>
           </div>
 
           <div id="submit-btn" class="btn-container">
-            <button type="submit" class="submit-btn btn btn-outline-dark">
-              Sign up
-            </button>
+            <button type="submit" value="submit" class="submit-btn btn btn-outline-dark" id="button">Sign up</button>
             <p class="btn-text">
               Already have an account?
               <span class="btn-text-hightlighted btn-link">
